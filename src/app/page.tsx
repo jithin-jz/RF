@@ -55,7 +55,7 @@ export default function Home() {
           </span>
         </div>
         <a
-          href="https://github.com"
+          href="https://github.com/jithin-jz/RF"
           target="_blank"
           rel="noopener noreferrer"
           className="text-muted hover:text-body transition-colors"
