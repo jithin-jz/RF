@@ -26,13 +26,13 @@ export function ResultCard({ result }: ResultCardProps) {
           Not Open Source
         </h2>
         <p className="text-sm text-muted max-w-md mx-auto">
-          No public repository found for{" "}
+          No public repo found for{" "}
           <span className="text-body font-mono-num text-xs bg-surface-elevated px-2 py-0.5 rounded break-all">
             {result.url}
           </span>
         </p>
         <p className="text-xs text-muted/70 mt-4">
-          This project is likely closed-source, or our detection methods could not identify it.
+          Either it&apos;s closed-source or we couldn&apos;t crack it. Try checking the site footer.
         </p>
       </div>
     );

@@ -71,12 +71,12 @@ export default function Home() {
       <section className="w-full max-w-5xl mx-auto px-4 md:px-6 pt-12 md:pt-20 pb-8 md:pb-10">
         <div className="text-center mb-10 md:mb-16 animate-fade-in-up">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-tighter text-on-dark mb-4 md:mb-5">
-            Find the Repo Behind
+            Uncover the Source
             <br />
-            <span className="text-primary">Any Website</span>
+            <span className="text-primary">Behind Any Site</span>
           </h1>
           <p className="text-sm md:text-base text-muted max-w-md md:max-w-lg mx-auto leading-relaxed px-2">
-            Paste any URL to discover its source code. Get the GitHub repo, tech stack, and project details instantly.
+            Drop a link. We scan it. You get the repo, tech stack, and all the details. Zero signup, zero cost.
           </p>
         </div>
 
@@ -93,7 +93,7 @@ export default function Home() {
                 type="text"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
-                placeholder="Enter a website URL (e.g. nextjs.org)"
+                placeholder="Paste any URL here..."
                 className="flex-1 bg-transparent px-3 h-full text-sm text-body placeholder-muted outline-none font-medium w-full"
                 disabled={loading}
               />
@@ -164,7 +164,7 @@ export default function Home() {
         {!result && !loading && (
           <div className="w-full max-w-2xl mx-auto text-center animate-fade-in-up-delay-2">
             <p className="text-xs text-muted uppercase tracking-wider font-medium mb-3 md:mb-4">
-              Popular examples
+              Go ahead, try one
             </p>
             <div className="flex flex-wrap justify-center gap-2">
               {[
@@ -194,19 +194,19 @@ export default function Home() {
                 <p className="text-xl md:text-3xl font-bold text-primary tracking-tight font-mono-num">
                   7
                 </p>
-                <p className="text-xs md:text-sm text-muted mt-1">Detection Strategies</p>
+                <p className="text-xs md:text-sm text-muted mt-1">Ways We Find It</p>
               </div>
               <div>
                 <p className="text-xl md:text-3xl font-bold text-primary tracking-tight font-mono-num">
                   20+
                 </p>
-                <p className="text-xs md:text-sm text-muted mt-1">Technologies Detected</p>
+                <p className="text-xs md:text-sm text-muted mt-1">Tech We Spot</p>
               </div>
               <div>
                 <p className="text-xl md:text-3xl font-bold text-primary tracking-tight font-mono-num">
                   100%
                 </p>
-                <p className="text-xs md:text-sm text-muted mt-1">Free and Open Source</p>
+                <p className="text-xs md:text-sm text-muted mt-1">Free. Always.</p>
               </div>
             </div>
           </div>
@@ -216,7 +216,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-hairline py-4 px-4 md:px-6">
         <p className="text-xs text-muted text-center">
-          Built with Next.js. Powered by GitHub API. No data stored.
+          open source. no tracking. just vibes and code.
         </p>
       </footer>
     </main>
