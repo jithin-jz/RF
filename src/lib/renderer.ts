@@ -10,7 +10,6 @@ export async function renderPage(url: string): Promise<{
   headers: Record<string, string>;
   method: "browser" | "fetch";
 }> {
-  // Try headless browser first
   try {
     const browser = await puppeteer.launch({
       args: chromium.args,
@@ -20,13 +19,11 @@ export async function renderPage(url: string): Promise<{
     });
 
     const page = await browser.newPage();
-    
-    // Set a realistic user agent
+
     await page.setUserAgent(
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     );
 
-    // Capture response headers from the main document
     let responseHeaders: Record<string, string> = {};
     page.on("response", (response) => {
       if (response.url() === url || response.url() === url + "/") {
@@ -37,13 +34,11 @@ export async function renderPage(url: string): Promise<{
       }
     });
 
-    // Navigate and wait for network to be mostly idle
     await page.goto(url, {
       waitUntil: "networkidle2",
       timeout: 15000,
     });
 
-    // Wait a bit more for any lazy-loaded content
     await new Promise((r) => setTimeout(r, 1000));
 
     const html = await page.content();
@@ -51,7 +46,6 @@ export async function renderPage(url: string): Promise<{
 
     return { html, headers: responseHeaders, method: "browser" };
   } catch (error) {
-    // Headless browser failed — fall back to simple fetch
     console.warn("Headless browser unavailable, falling back to fetch:", error);
     return fetchPage(url);
   }
