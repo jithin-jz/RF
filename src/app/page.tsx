@@ -214,7 +214,7 @@ export default function Home() {
       )}
 
       {/* Footer */}
-      <footer className="border-t border-hairline py-4 px-4 md:px-6">
+      <footer className="border-t border-hairline py-3 px-4">
         <p className="text-xs text-muted text-center">
           open source. no tracking. just vibes and code.
         </p>
