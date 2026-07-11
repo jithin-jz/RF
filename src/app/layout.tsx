@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: "RepoFinder | Find the GitHub Repo Behind Any Website",
   description:
     "Paste any website URL and instantly discover if it's open source. Find the GitHub repository, tech stack, stars, license, and more.",
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/apple-touch-icon.svg",
+  },
   keywords: [
     "github",
     "open source",
